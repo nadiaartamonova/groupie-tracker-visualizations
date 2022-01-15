@@ -1,0 +1,12 @@
+{{ define "404" }}
+{{ template "header"}}
+
+<div class="container">           
+       <h1 style="text-align: center; padding-top: 20px;"> {{ .Number }} error</h1>
+       <p style="text-align: center; padding-top: 20px;"> {{ .Message }} </p>
+       <div class="sm text-center"> 
+             <button > <a href="/"> home page </a></button>
+       </div>
+</div>      
+{{ template "footer"}}
+{{ end }}

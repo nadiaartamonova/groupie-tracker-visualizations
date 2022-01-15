@@ -1,0 +1,46 @@
+{{ define "index" }}
+{{ template "header"}}
+
+<div class="img-container ">
+  <img src="static/img/main.png" alt="">
+  <h1> groupie tracker </h1>
+  <hr class="line">
+  <h3> information about some bands and upcoming concert</h3>
+</div>
+    <div style="clear:both"></div>
+  
+
+
+<div class="content">
+    <div class="row text-center" style="padding-top: 50px;">
+        {{range .}}
+        <div class="blog-card">
+              <div class="meta">
+                  <div class="photo" style="background-image: url({{.Image}})"></div>
+              </div>
+        
+        
+              <div class="description">
+                  <h1>{{.Name}}</h1>
+                  <h2><strong>Creation date: </strong> {{.CreationDate}} </h2>
+                  <h2><strong> First album: </strong>{{.FirstAlbum}} </h2>
+                  <p style="text-align: left; padding-bottom: 30px;"><strong> Members: </strong><br>
+                    {{range .Members}}
+                    {{.}}<br>
+                    {{end}}
+                  </p>
+                  <div class="read-more">
+                    <a href='/artist?id={{.Id}}'>consert info</a>
+                  </div>
+
+              </div>
+        </div>
+
+        {{end}} 
+    </div>
+</div>
+    
+
+    {{ template "footer"}}
+    {{ end }}
+

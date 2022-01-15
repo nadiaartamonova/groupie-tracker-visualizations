@@ -1,0 +1,49 @@
+{{ define "artist" }}
+{{ template "header"}}
+      <div class="img-containerArtist">
+        <img src="static/img/main4.png" alt="worldmap">
+      </div>
+          <div style="clear:both"></div>
+
+    <div class="content">
+        <div class="row text-center" style="padding-top: 50px;">
+
+            <div class="blog-card-artist">
+                <div class="meta">
+                  <div class="photo" style="background-image: url({{.Image}})"></div>
+                </div>
+        
+        
+                <div class="description">
+                  <h1>{{.Name}}</h1>
+                  <h2><strong>Creation date: </strong> {{.CreationDate}} </h2>
+                  <h2><strong> First album: </strong>{{.FirstAlbum}} </h2>
+                  <div class="row">
+                      <div class="col">
+                        <p style="text-align: left;"><strong> Members: </strong><br>
+                          {{range .Members}}
+                          {{.}}<br>
+                          {{end}}
+                        </p>
+                        <br>
+                      </div>
+                      <div class="col"> 
+                        <p style="text-align: left;"><strong> Conserts: </strong><br>
+                            {{range .Concert}}      <strong>{{.Location}}</strong><br>     {{range .Dates}}     {{.}}<br>    {{end}}   {{end}}
+                        </p>
+                      </div>
+
+                  
+                  <h4 class="read-more">
+                    <a href="/">home page</a>
+                  </h4>
+                </div>
+            </div>
+
+            
+      
+        
+      </div>
+    </div>
+    {{ template "footer"}}
+    {{ end }}
